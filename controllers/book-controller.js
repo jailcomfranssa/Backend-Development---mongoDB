@@ -29,7 +29,34 @@ const getAllBooks = async (req, res) => {
         });
     }
 };
-const getSingleBookById = async (req, res) => {};
+const getSingleBookById = async (req, res) => {
+    try {
+        const getCurrentBookId = req.params.id;
+        const bookDetailsById =  await Book.findById(getCurrentBookId);
+        if(!bookDetailsById){
+            log.warn(`Book with ID ${getCurrentBookId} not found.`);
+            res.status(404).json({
+                success: false,
+                message: `Book with ID ${getCurrentBookId} not found.`
+            });
+        }
+        log.info("Fetched book by ID successfully:", bookDetailsById);
+        res.status(200).json({
+            success: true,
+            message: "Fetched book by ID successfully",
+            book: bookDetailsById
+        });
+
+    } catch (error) {
+        log.error("Error fetching book by ID:");
+        res.status(500).json({
+            success: false,
+            message: "An error occurred while fetching the book.",
+            error: error.message
+        });
+    }
+};
+
 const addNewBooks = async (req, res) => {
     try{
         const newBookFormData = req.body;

@@ -10,3 +10,6 @@ Content-Type: application/json
 
 ### get all books
 GET http://localhost:3000/api/books
+
+### get book by id
+GET http://localhost:3000/api/books/690115f4acd173531cbbcb
