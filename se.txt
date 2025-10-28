@@ -1,0 +1,3 @@
+dhiegoalexx91_db_user
+DIEv8GAXOHqpSl3O
+mongodb+srv://dhiegoalexx91_db_user:DIEv8GAXOHqpSl3O@cluster0.twsunse.mongodb.net/
