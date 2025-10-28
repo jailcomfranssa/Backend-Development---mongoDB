@@ -1,0 +1,9 @@
+### add book
+POST http://localhost:3000/api/books
+Content-Type: application/json
+
+{
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "year": 1925
+}
