@@ -1,24 +1,29 @@
 {
-  "name": "03-backend-development---mongodb",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "server.js",
-    "dev": "nodemon server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "nodemon": "^3.1.10"
-  },
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "mongoose": "^8.19.2"
-  }
+    "name": "03-backend-development---mongodb",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "server.js",
+        "dev": "nodemon server.js"
+    },
+    "keywords": [
+        "API",
+        "MongoDB",
+        "Mongoose",
+        "Express"
+    ],
+    "author": "Jailson S. França",
+    "license": "ISC",
+    "type": "commonjs",
+    "devDependencies": {
+        "nodemon": "^3.1.10"
+    },
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "dotenv": "^17.2.3",
+        "express": "^5.1.0",
+        "mongoose": "^8.19.2"
+    }
 }
