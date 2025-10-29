@@ -23,7 +23,7 @@ Ele foi criado com o objetivo de praticar conceitos de backend moderno, como CRU
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-usuario/03-Backend-Development-MongoDB.git
+   git clone https://github.com/jailcomfranssa/Backend-Development---mongoDB.git
    cd 03-Backend-Development-MongoDB
    ```
 
@@ -72,6 +72,7 @@ Ele foi criado com o objetivo de praticar conceitos de backend moderno, como CRU
 
 ---
 ###
+<div  style="display: inline_block" align="center">
 
 [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white)](#)
 [![Express.js](https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB)](#)
@@ -80,5 +81,7 @@ Ele foi criado com o objetivo de praticar conceitos de backend moderno, como CRU
 [![JSON](https://img.shields.io/badge/JSON-000?logo=json&logoColor=fff)](#)
 [![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff)](#)
 [![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&logoColor=white)](#)
+
+</div>
 
 
