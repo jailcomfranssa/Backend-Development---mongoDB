@@ -75,7 +75,33 @@ const addNewBooks = async (req, res) => {
     }
 };
 const updateBooks = async (req, res) => {};
-const deleteBooks = async (req, res) => {};
+const deleteBooks = async (req, res) => {
+    try{
+        const getCurrentBookId = req.params.id;
+        const deleteBooks = await Book.findByIdAndDelete(getCurrentBookId);
+        if(!deleteBooks){
+            log.warn(`Book with ID ${getCurrentBookId} not found for deletion.`);
+            res.status(404).json({
+                success: false,
+                message: `Book with ID ${getCurrentBookId} not found for deletion.`
+            });
+        }
+        log.info("Book deleted successfully:", deleteBooks);
+        res.status(200).json({
+            success: true,
+            message: "Book deleted successfully",
+            book: deleteBooks
+        });
+
+    }catch(error){
+        log.error("Error deleting book:", error);
+        res.status(500).json({
+            success: false,
+            message: "An error occurred while deleting the book.",
+            error: error.message
+        });
+    }
+};
 
 module.exports = {
     getAllBooks,
@@ -84,3 +110,5 @@ module.exports = {
     updateBooks,
     deleteBooks,
 };
+
+//4:21
