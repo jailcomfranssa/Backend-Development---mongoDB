@@ -18,8 +18,6 @@ Ele foi criado com o objetivo de praticar conceitos de backend moderno, como CRU
 ---
 
 
----
-
 ## ⚙️ Configuração do Ambiente
 
 1. **Clone o repositório:**
@@ -42,6 +40,8 @@ Ele foi criado com o objetivo de praticar conceitos de backend moderno, como CRU
     ```bash
     npm run dev
     ```
+
+---
 ## 🧠 Funcionalidades Principais
 ✅ Criação de novos livros (POST /books)
 
@@ -57,6 +57,7 @@ Ele foi criado com o objetivo de praticar conceitos de backend moderno, como CRU
 
 🧾 Logs coloridos e informativos no console
 
+---
 ## 🧠 🧩 Exemplo de Log Colorido
 [28/10/2025, 18:01:34] ✅ SUCCESS: MongoDB connected successfully
 
@@ -66,6 +67,11 @@ Ele foi criado com o objetivo de praticar conceitos de backend moderno, como CRU
 
 [28/10/2025, 18:05:10] ❌ ERROR: Error fetching book by ID: Cast to ObjectId failed
 
+###
+</br>
+
+---
+###
 
 [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white)](#)
 [![Express.js](https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB)](#)
@@ -74,3 +80,5 @@ Ele foi criado com o objetivo de praticar conceitos de backend moderno, como CRU
 [![JSON](https://img.shields.io/badge/JSON-000?logo=json&logoColor=fff)](#)
 [![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff)](#)
 [![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&logoColor=white)](#)
+
+
