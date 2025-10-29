@@ -4,61 +4,58 @@ const log = require("../utils/logger");
 const getAllBooks = async (req, res) => {
     try {
         const allBooks = await Book.find({});
-        if(allBooks?.length > 0){
+        if (allBooks?.length > 0) {
             log.info("Fetched all books successfully:", allBooks);
             res.status(200).json({
                 success: true,
                 message: "Fetched all books successfully",
-                books: allBooks
-            })
-
-        }else{
+                books: allBooks,
+            });
+        } else {
             log.warn("No books found in the database.");
             res.status(404).json({
                 success: false,
-                message: "No books found in the database."
+                message: "No books found in the database.",
             });
         }
-
     } catch (error) {
         log.error("Error fetching all books:", error);
         res.status(500).json({
             success: false,
             message: "An error occurred while fetching books.",
-            error: error.message
+            error: error.message,
         });
     }
 };
 const getSingleBookById = async (req, res) => {
     try {
         const getCurrentBookId = req.params.id;
-        const bookDetailsById =  await Book.findById(getCurrentBookId);
-        if(!bookDetailsById){
+        const bookDetailsById = await Book.findById(getCurrentBookId);
+        if (!bookDetailsById) {
             log.warn(`Book with ID ${getCurrentBookId} not found.`);
             res.status(404).json({
                 success: false,
-                message: `Book with ID ${getCurrentBookId} not found.`
+                message: `Book with ID ${getCurrentBookId} not found.`,
             });
         }
         log.info("Fetched book by ID successfully:", bookDetailsById);
         res.status(200).json({
             success: true,
             message: "Fetched book by ID successfully",
-            book: bookDetailsById
+            book: bookDetailsById,
         });
-
     } catch (error) {
         log.error("Error fetching book by ID:");
         res.status(500).json({
             success: false,
             message: "An error occurred while fetching the book.",
-            error: error.message
+            error: error.message,
         });
     }
 };
 
 const addNewBooks = async (req, res) => {
-    try{
+    try {
         const newBookFormData = req.body;
         const newlyCreatedBook = await Book.create(newBookFormData);
         if (newlyCreatedBook) {
@@ -66,39 +63,71 @@ const addNewBooks = async (req, res) => {
             res.status(201).json({
                 success: true,
                 message: "New book added successfully",
-                book: newlyCreatedBook
+                book: newlyCreatedBook,
             });
         }
-
-    }catch(error){
+    } catch (error) {
         log.error("Error adding new book:", error);
     }
 };
-const updateBooks = async (req, res) => {};
-const deleteBooks = async (req, res) => {
-    try{
+const updateBooks = async (req, res) => {
+    try {
+        const updatedBookFormData = req.body;
         const getCurrentBookId = req.params.id;
-        const deleteBooks = await Book.findByIdAndDelete(getCurrentBookId);
-        if(!deleteBooks){
-            log.warn(`Book with ID ${getCurrentBookId} not found for deletion.`);
+        const updateBook = await Book.findByIdAndUpdate(
+            getCurrentBookId,
+            updatedBookFormData,
+            {
+                new: true,
+            }
+        );
+        if (!updateBook) {
+            log.warn(`Book with ID ${getCurrentBookId} not found for update.`);
             res.status(404).json({
                 success: false,
-                message: `Book with ID ${getCurrentBookId} not found for deletion.`
+                message: `Book with ID ${getCurrentBookId} not found for update.`,
+            });
+        }
+        log.info("Book updated successfully:", updateBook);
+        res.status(200).json({
+            success: true,
+            message: "Book updated successfully",
+            book: updateBook,
+        });
+    } catch (error) {
+        log.error("Error updating book:", error);
+        res.status(500).json({
+            success: false,
+            message: "An error occurred while updating the book.",
+            error: error.message,
+        });
+    }
+};
+const deleteBooks = async (req, res) => {
+    try {
+        const getCurrentBookId = req.params.id;
+        const deleteBooks = await Book.findByIdAndDelete(getCurrentBookId);
+        if (!deleteBooks) {
+            log.warn(
+                `Book with ID ${getCurrentBookId} not found for deletion.`
+            );
+            res.status(404).json({
+                success: false,
+                message: `Book with ID ${getCurrentBookId} not found for deletion.`,
             });
         }
         log.info("Book deleted successfully:", deleteBooks);
         res.status(200).json({
             success: true,
             message: "Book deleted successfully",
-            book: deleteBooks
+            book: deleteBooks,
         });
-
-    }catch(error){
+    } catch (error) {
         log.error("Error deleting book:", error);
         res.status(500).json({
             success: false,
             message: "An error occurred while deleting the book.",
-            error: error.message
+            error: error.message,
         });
     }
 };

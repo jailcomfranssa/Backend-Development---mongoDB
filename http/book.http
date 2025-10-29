@@ -15,7 +15,7 @@ GET http://localhost:3000/api/books
 GET http://localhost:3000/api/books/69011e8c11f0c9fbfdd2bcb9
 
 ### update book by id
-PUT http://localhost:3000/api/books/69011e8c11f0c9fbfdd2bcb9
+PUT http://localhost:3000/api/books/69011b359b09c90fef5d68d2
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
     "year": 1926
 }
 ### delete book by id
-DELETE http://localhost:3000/api/books/69011e8c11f0c9fbfdd2bcb9
+DELETE http://localhost:3000/api/books/69011b507a024c8a63d1ca78
